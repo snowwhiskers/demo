@@ -9,8 +9,6 @@ function UserAction() {
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send();
         var response = JSON.parse(xhttp.responseText);
-var currentImage  ;
-
         console.log("response: " + JSON.stringify(response));
         document.getElementById('greeting').innerHTML = response.content;
     }
@@ -18,30 +16,39 @@ var currentImage  ;
         console.log("name is undefined");
     }
 }
+
+
 function changeColor(newColor) {
           var elem = document.getElementById('para');
           elem.style.color = newColor;
-          }
+}
 
+function changeImage(i) {
 
-
-
-function changeImage(int order) {
-
-      switch (order) {
-          case '1':
-            document.getElementById("first").src = "media/steps.JPG";
+      switch (i) {
+          case 'A':
+            document.getElementById("steps").src = "media/steps.JPG";
             break;
-          case '2':
-            console.log('Limes are $1.49');
+          case 'B':
+            document.getElementById("bed").src = "media/bed.jpg";
             break;
-          case '3':
-            console.log('Papayas are $1.29');
+          case 'C':
+            document.getElementById("big").src = "media/big.jpg";
+            break;
+          case 'D':
+            document.getElementById("big2").src = "media/big.jpg";
+            break;
+          case 'E':
+            document.getElementById("steps2").src = "media/steps.JPG";
+            break;
+          case 'F':
+            document.getElementById("bed2").src = "media/bed.jpg";
             break;
           default:
             console.log('Invalid item');
             break;
       }
+
 
     /*console.log('src1: ' + document.getElementById("back").src);
     console.log('src2: ' + "media/blossoms.JPG");
@@ -50,4 +57,12 @@ function changeImage(int order) {
     } else {
             document.getElementById("back").src = "media/bed.jpg";
     }*/
+}
+
+function refresh() {
+    var pictures = document.querySelectorAll(".refresh");
+    //console.log(pictures);
+    for (var i = 0; i < pictures.length; i++) {
+        pictures.item(i).src = "media/blossoms.JPG";
+    }
 }

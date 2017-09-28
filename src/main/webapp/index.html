@@ -18,8 +18,20 @@ Name: <input id="name" type="text" name="name"><br>
     <button onclick="changeColor('blue');">blue</button>
     <button onclick="changeColor('red');">red</button>
 
-    <img src="media/blossoms.JPG" alt="blossoms"  id = "first" onclick="changeImage(1)">
-    <img src="media/steps.JPG" alt="steps"  >
+    <div class="memory">
+        <h1>Memory</h1>
+        <ul>
+            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "steps" onclick="changeImage('A')"></li>
+            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "bed" onclick="changeImage('B')"></li>
+            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "big" onclick="changeImage('C')"></li>
+            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "big2" onclick="changeImage('D')"></li>
+            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "steps2" onclick="changeImage('E')"></li>
+            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "bed2" onclick="changeImage('F')"></li>
+        </ul>
+
+        <button onclick="refresh();" >Refresh</button>
+    </div>
+
 
   </body>
 </html>

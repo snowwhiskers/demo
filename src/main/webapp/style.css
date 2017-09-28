@@ -1,6 +1,26 @@
 img {
-    display: block;
-    width: 30%;
-    height: 30%;
-    padding: 20px;
+    width: 25%;
+    height: 25%;
+    margin: 15px;
+    border-radius: 20%;
+    /*border-style: solid;
+    border-color: DarkGoldenRod;
+    border-width: 10px;*/
+}
+
+ul {
+    position: relative;
+    left: 100px;
+}
+
+li {
+    display: inline;
+}
+
+h1 {
+    text-align: center;
+}
+
+.memory {
+    background-color: Cornsilk;
 }
