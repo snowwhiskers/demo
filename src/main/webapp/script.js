@@ -9,6 +9,7 @@ function UserAction() {
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send();
         var response = JSON.parse(xhttp.responseText);
+var currentImage  ;
 
         console.log("response: " + JSON.stringify(response));
         document.getElementById('greeting').innerHTML = response.content;
@@ -16,4 +17,37 @@ function UserAction() {
     else {
         console.log("name is undefined");
     }
+}
+function changeColor(newColor) {
+          var elem = document.getElementById('para');
+          elem.style.color = newColor;
+          }
+
+
+
+
+function changeImage(int order) {
+
+      switch (order) {
+          case '1':
+            document.getElementById("first").src = "media/steps.JPG";
+            break;
+          case '2':
+            console.log('Limes are $1.49');
+            break;
+          case '3':
+            console.log('Papayas are $1.29');
+            break;
+          default:
+            console.log('Invalid item');
+            break;
+      }
+
+    /*console.log('src1: ' + document.getElementById("back").src);
+    console.log('src2: ' + "media/blossoms.JPG");
+    if (document.getElementById("back").src == "media/blossoms.JPG") {
+            document.getElementById("back").src = "media/steps.JPG";
+    } else {
+            document.getElementById("back").src = "media/bed.jpg";
+    }*/
 }

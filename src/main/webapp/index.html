@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -11,5 +12,14 @@
 Name: <input id="name" type="text" name="name"><br>
 <button type="submit" onclick="UserAction()">Search</button>
 
-</body>
+    <input type="text" name="search" placeholder="Search..">
+
+    <p id="para">Some text here</p>
+    <button onclick="changeColor('blue');">blue</button>
+    <button onclick="changeColor('red');">red</button>
+
+    <img src="media/blossoms.JPG" alt="blossoms"  id = "first" onclick="changeImage(1)">
+    <img src="media/steps.JPG" alt="steps"  >
+
+  </body>
 </html>
