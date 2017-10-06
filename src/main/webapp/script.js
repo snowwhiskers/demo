@@ -1,3 +1,4 @@
+
 function UserAction() {
     var xhttp = new XMLHttpRequest();
     var url = "http://localhost:8080/greeting";
@@ -17,12 +18,13 @@ function UserAction() {
     }
 }
 
-
 function changeColor(newColor) {
           var elem = document.getElementById('para');
           elem.style.color = newColor;
 }
 
+
+//MEMORY
 var score = 0;
 var currentImage = "";
 var previousImage = "";
@@ -33,9 +35,7 @@ function changeImage(i) {
           case 'A':
             currentImage = "media/steps.JPG";
             document.getElementById("steps").src = "media/steps.JPG";
-            console.log("checkIfSame " + currentImage + previousImage);
             checkIfSame();
-
             previousImage = currentImage;
             break;
           case 'B':
@@ -72,25 +72,15 @@ function changeImage(i) {
             console.log('Invalid item');
             break;
       }
-
-
-    /*console.log('src1: ' + document.getElementById("back").src);
-    console.log('src2: ' + "media/blossoms.JPG");
-    if (document.getElementById("back").src == "media/blossoms.JPG") {
-            document.getElementById("back").src = "media/steps.JPG";
-    } else {
-            document.getElementById("back").src = "media/bed.jpg";
-    }*/
 }
 
 function refresh() {
     //all pictures
     var pictures = document.querySelectorAll(".refresh");
     score = 0;
-    var currentImage = "";
-    var previousImage = "";
+    currentImage = "";
+    previousImage = "";
     counter = 0;
-    //console.log(pictures);
     return function() {
         for (var i = 0; i < pictures.length; i++) {
                 pictures.item(i).src = "media/blossoms.JPG";
@@ -98,24 +88,21 @@ function refresh() {
     }
 }
 
-//document.getElementById("demo").addEventListener("click", checkIfSame());
-
+function refreshButton() {
+    setTimeout(refresh(), 0);
+}
 
 function checkIfSame() {
     if (counter == 1) {
-
         if (currentImage == previousImage) {
             score = score++;
             counter = 0;
-            console.log("same!");
+            //console.log("same!");
         } else {
-            setTimeout(refresh(), 1000);
-
-            console.log("not same!");
+            setTimeout(refresh(), 500);
+            //console.log("not same!");
         }
     } else {
         counter++;
-        console.log("counter++");
     }
-
 }
