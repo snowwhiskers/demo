@@ -4,32 +4,20 @@
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-<!--
-<h1>My First Heading</h1>
-<div id="greeting">Hello World!</div>
+<body onload="refresh();">
 
-Name: <input id="name" type="text" name="name"><br>
-<button type="submit" onclick="UserAction()">Search</button>
-
-    <input type="text" name="search" placeholder="Search..">
-
-    <p id="para">Some text here</p>
-    <button onclick="changeColor('blue');">blue</button>
-    <button onclick="changeColor('red');">red</button>
--->
     <div class="memory">
         <h1>Memory</h1>
         <ul>
-            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "steps" onclick="changeImage('A')"></li>
-            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "bed" onclick="changeImage('B')"></li>
-            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "big" onclick="changeImage('C')"></li>
-            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "big2" onclick="changeImage('D')"></li>
-            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "steps2" onclick="changeImage('E')"></li>
-            <li><img src="media/blossoms.JPG" alt="blossoms"  class="refresh" id = "bed2" onclick="changeImage('F')"></li>
+            <li><img id="1"></li>
+            <li><img id="2"></li>
+            <li><img id="3"></li>
+            <li><img id="4"></li>
+            <li><img id="5"></li>
+            <li><img id="6"></li>
         </ul>
 
-        <button onclick="refreshButton();" >Refresh</button>
+        <button onclick="refresh();" >Refresh</button>
     </div>
 
 
