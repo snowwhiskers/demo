@@ -6,15 +6,21 @@ var currentImage = {};
 var previousImage = {};
 var counter = 0;
 var randomImg = [];
+var clickEnabled = true;
 
 
 function refresh() {
+    currentImage = {};
+    previousImage = {};
+    counter = 0;
+    randomImg = [];
+
     // create random images array
     var images = document.getElementsByTagName("img");
     var needNew = true;
     for(var j=1; j<=images.length; j++) {
         // set id and empty img value
-        randomImg[j] = {id: j, image: ""};
+        randomImg[j] = {id: j, image: "", done: false}; // done is to mark images that we have guessed right
 
         // loops until the same picture doesn't show up more than twice
         while (needNew) {
@@ -26,7 +32,8 @@ function refresh() {
         needNew = true;
 
 
-        // do we need this?
+        // do we need this
+        // done is to mark images that we have guessed right
         //randomImg[j].done = false;
     }
 
@@ -34,13 +41,15 @@ function refresh() {
     for (var i=0; i<images.length; i++) {
         var img = images[i];
         img.addEventListener("click", function() {
-            counter++;
-            //get id of clicked image and change img to randomImg with same id
-            document.getElementById(this.id).src = randomImg[this.id].image;
-            //set value of currentImage
-            currentImage = randomImg[this.id];
-            checkIfSame();
-            previousImage = currentImage;
+            if (clickEnabled) {
+                counter++;
+                //get id of clicked image and change img to randomImg with same id
+                document.getElementById(this.id).src = randomImg[this.id].image;
+                //set value of currentImage
+                currentImage = randomImg[this.id];
+                checkIfSame();
+                previousImage = currentImage;
+            }
         });
     }
 
@@ -65,14 +74,14 @@ function countImg (index) {
 function hideCats() {
     //start with 1 bc randomImg[0] is empty
     for (var i=1; i<randomImg.length; i++) {
-        // if false
-        //if(!randomImg[i].done) {
 
+        // only hide images not yet guessed
+        if(!randomImg[i].done) {
             //hide cat
             document.getElementById(randomImg[i].id).src = "media/blossoms.JPG";
-
-        //}
+        }
     }
+    clickEnabled = true;
 }
 //works!
 // function for comparing images
@@ -84,16 +93,22 @@ function checkIfSame() {
         // if they are the same
         if (currentImage.image === previousImage.image) {
             //increase score
-            score++;
+            addAndUpdateScore();
 
             // why do we need this?
-            //previousImage.done = true;
-            //currentImage.done = true;
+            previousImage.done = true;
+            currentImage.done = true;
         }
         // if not the same, hide all
         else {
             setTimeout(hideCats, 500);
             //need to also disable clicks while on timeout...
+            clickEnabled = false;
         }
     }
+}
+
+function addAndUpdateScore() {
+    score++;
+    document.getElementById("score").textContent = score;
 }
