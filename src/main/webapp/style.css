@@ -19,7 +19,8 @@ li {
 
 h1, p {
     text-align: center;
-     font-family: sans-serif;
+    font-family: sans-serif;
+    background-color: red;
 }
 
 .memory {
@@ -35,4 +36,8 @@ button {
     left: 15px;
     bottom: 15px;
     border-radius: 20%;
+}
+
+#score {
+    background-color: yellow;
 }

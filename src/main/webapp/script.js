@@ -1,6 +1,6 @@
 
 //MEMORY
-var imagesArr = ["media/bed.jpg", "media/big.jpg", "media/steps.jpg"];
+var imagesArr = ["media/bed.jpg", "media/big.jpg", "media/steps.JPG"];
 var score = 0;
 var currentImage = {};
 var previousImage = {};
